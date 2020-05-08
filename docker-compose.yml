@@ -1,0 +1,54 @@
+version: '3'
+services:
+  nginx:
+    container_name: pizza-application-nginx-control
+    image: docker-pizza-client:latest
+    restart: always
+    ports:
+      - 80:80
+
+  mongo_auth:
+    container_name: mongo_auth
+    image: mongo:latest
+    volumes:
+     - mongo_auth:/data/db
+    ports:
+     - "27011:27017"
+    hostname: mongo_auth
+
+  mongo_product:
+    container_name: mongo_product
+    image: mongo:latest
+    volumes:
+     - mongo_product:/data/db
+    ports:
+     - "27010:27017"
+    hostname: mongo_product
+
+
+  authentication_service:
+    container_name: authentication_service
+    depends_on:
+     - mongo_auth
+    image: docker-pizza-authentication:latest
+    ports:
+     - "9091:9091"
+    hostname: authentication_service
+    links:
+     - mongo_auth
+    
+  product_service:
+  container_name: product_service
+    depends_on:
+     - mongo_product
+    image: docker-pizza-product:latest
+    ports:
+     - "9090:9090"
+    hostname: product_service
+    links:
+     - mongo_product
+
+volumes:
+  mongo_auth:
+  mongo_product:
+  

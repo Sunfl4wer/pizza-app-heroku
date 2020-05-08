@@ -1,0 +1,101 @@
+.card
+    display: flex
+    width: 100%
+    height: auto
+    border: solid 1px rgba(214, 214, 214, 0.507)
+    background-color: #ffffff
+
+    .image 
+        display: block
+        width: 40%
+        margin: 25px 5px auto 5px
+
+    .info
+        width: 60%
+        height: auto
+        display: block
+        border-left: solid 1px rgba(214, 214, 214, 0.507)
+
+        .productName
+            display: flex
+            color: rgb(44, 44, 44)
+            align-items: center
+            justify-content: left
+            font-size: 18px
+            font-weight: 700
+            margin: 5%
+        
+        .price
+            display: flex
+            align-items: center
+            justify-content: left
+            font-size: 20px
+            font-weight: 100
+            margin: 5%
+
+        .description
+            display: flex
+            align-items: center
+            justify-content: left
+            font-size: 13px
+            margin: 5%
+        
+        .detail
+            text-decoration: none
+            color: rgb(0, 140, 255)
+            font:
+                size: 15px
+                weight: 700
+            margin: 5%
+            
+        .cta
+            display: block
+            margin: 10px
+            text-align: center
+
+            .add
+                width: 150px
+                height: 30px
+                border: 1px solid rgb(185, 185, 185)
+                border-radius: 5px
+                font-size: 15px
+                background-color: rgb(0, 162, 255)
+                transition: all 0.2s ease
+                color: white
+
+                &:hover
+                    cursor: pointer
+                    background-color: rgb(0, 142, 224)
+                    
+                &:active
+                    outline: none
+                    background-color: rgb(0, 107, 168)
+            
+                &:focus
+                    outline: none
+
+@media screen and (max-width: 800px)
+    .card
+        width: 400px
+        margin: 25px auto
+        display: block
+        padding: 25px 0
+
+        .image
+            margin: auto
+
+        .info
+            width: 90%
+            margin: 0 5%
+            border: none
+
+            .productName, .price
+                justify-content: center
+
+@media screen and (max-width: 470px)
+    .card
+        width: 350px
+
+@media screen and (max-width: 350px)
+    .card
+        width: 250px

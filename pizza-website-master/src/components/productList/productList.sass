@@ -1,0 +1,30 @@
+.productList 
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: auto
+    grid-gap: 40px
+    margin: 10px auto
+    width: 1000px
+
+@media screen and (max-width: 1440px)
+    .productList
+        width: 800px
+
+@media screen and (max-width: 1024px)
+    .productList
+        width: 750px
+
+@media screen and (max-width: 800px)
+    .productList
+        width: 400px
+        display: block
+
+@media screen and (max-width: 470px)
+    .productList
+        width: 350px
+        display: block
+
+@media screen and (max-width: 350px)
+    .productList
+        width: 300px
+        display: block

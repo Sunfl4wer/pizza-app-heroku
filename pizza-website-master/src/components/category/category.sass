@@ -1,0 +1,55 @@
+.category-container
+    display: flex
+    justify-content: space-around
+    align-items: center
+    margin: 10px auto
+    width: 1000px
+    
+    button
+        width: 100%
+        height: 50px
+        border: none
+        border-left: solid 1px rgb(190, 190, 190)
+        background-color: white
+        font-size: 15px
+        cursor: pointer
+
+        &:hover
+            background-color: rgb(230, 230, 230)
+            
+        &:active
+            outline: none
+            background-color: rgb(209, 209, 209)
+    
+        &:focus
+            outline: none
+            
+    
+        &:disabled
+            cursor: default
+            border: none
+            background-color: rgb(0, 162, 255)
+            color: white
+
+@media screen and (max-width: 1440px)
+    .category-container
+        width: 800px
+
+@media screen and (max-width: 1024px)
+    .category-container
+        width: 750px
+
+@media screen and (max-width: 800px)
+    .category-container
+        width: 400px
+
+@media screen and (max-width: 470px)
+    .category-container
+        width: 350px
+
+@media screen and (max-width: 350px)
+    .category-container
+        width: 250px
+
+        button
+            font-size: 13px
